@@ -7,6 +7,7 @@ echo "-----------------------------------------------" >> $logFile
 sudo apt-get update
 sudo apt-get install mariadb-server -y >> $logFile
 
+
 sqlscript="/tmp/tmp.sql"
 
 echo "Creating MySQL Database" >> $logFile
@@ -28,9 +29,15 @@ echo "-----------------------------------------------" >> $logFile
 cd $HOME
 
 sudo apt-get install curl libsodium-dev gnupg2 -y
-gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-# \curl -sSL https://rvm.io/pkuczynski.asc | gpg --import - >> $logFile
-\curl -sSL https://get.rvm.io | bash -s stable >> $logFile
+sudo apt-get install software-properties-common -Y $logFile
+sudo apt-add-repository -y ppa:rael-gc/rvm
+sudo apt-get update
+sudo apt-get install rvm
+# gpg2 --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+# \curl -sSL https://rvm.io/pkuczynski.asc | gpg2 --import - >> $logFile
+# \curl -sSL https://get.rvm.io | bash -s stable >> $logFile
+
+sudo usermod -a -G rvm vagrant
 
 source $HOME/.rvm/scripts/rvm >> $logFile
 
