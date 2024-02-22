@@ -39,8 +39,8 @@ echo "Installing Ruby" > $logFile
 echo "-----------------------------------------------" >> $logFile
 
 rvm info >> $logFile
-rvm install 2.6 >> $logFile
-rvm --default 2.6 >> $logFile
+rvm install 2.7 >> $logFile
+rvm --default 2.7 >> $logFile
 
 ## Get CBRAIN Code
 
