@@ -70,8 +70,7 @@ cd $HOME/cbrain/BrainPortal/config
 sed 's/cbrain_db_name_here/cbrain_db/g' database.yml.TEMPLATE | sed 's/cbrain_db_user_name_here/cbrain/g' | sed 's/cbrain_db_user_pw_here/CBRAIN/g' > database.yml
 
 ## install bundler
-
-gem install bundler >> $logFile
+gem install bundler -v 2.4.22  >> $logFile
 cd $HOME/cbrain/BrainPortal; bundle install >> $logFile
 cd $HOME/cbrain/Bourreau; bundle install >> $logFile
 
