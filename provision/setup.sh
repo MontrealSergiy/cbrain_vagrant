@@ -50,6 +50,10 @@ echo "-----------------------------------------------" >> $logFile
 cd $HOME
 git clone https://github.com/aces/cbrain.git >> $logFile
 
+cd $HOME/cbrain/BrainPortal/cbrain_plugins
+git clone https://github.com/aces/cbrain-plugins-neuro.git >> $logFile
+
+git clone https://github.com/aces/cbrain.git >> $logFile
 ### Make sure we have all of the requirements
 
 echo "Installing additional packages" >> $logFile
