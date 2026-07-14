@@ -133,7 +133,7 @@ echo $timezne | xargs -I {} echo 'p=User.first; p.time_zone = "{}"; p.save' | ra
 echo $HOME | xargs -I {} echo 'DataProvider.create :id => 2, :name => "LocalDP", :type => "FlatDirLocalDataProvider", :remote_dir => "{}/FlatLocalDP", :description => "Automatically Generated Local Data Provider", :user_id => 1, :group_id => 1, :online => 1' | rails c >> $logFile
 echo $timezone | xargs -I {} echo 'd=DataProvider.where("id=2").first; d.time_zone = "{}"; d.save' | rails c >> $logFile
 
-cat ~/.ssh/id_cbrain_portal.pub >> ~/.ssh/authorized_keys
+cat ~/.ssh/id_cbrain_ed25519.pub >> ~/.ssh/authorized_keys
 echo $HOME | xargs -I {} echo 'DataProvider.create :id => 3, :name => "SshDP", :type => "FlatDirSshDataProvider", :remote_dir => "{}/SshDP", :description => "Automatically Generated SSH Data Provider", :user_id => 1, :group_id => 1, :online => 1' | rails c >> $logFile
 echo $timezone | xargs -I {} echo 'd=DataProvider.where("id=3").first; d.time_zone = "{}"; d.save' | rails c >> $logFile
 echo $USER | xargs -I {} echo 'd=DataProvider.where("id=3").first; d.remote_user = "{}"; d.remote_host = "localhost"; d.remote_port = 22; d.save' | rails c >> $logFile
